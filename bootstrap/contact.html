@@ -1,0 +1,189 @@
+<!Doctype>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>contact</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet"
+        <link href="css/style.css" rel="stylesheet"
+    </head>
+    <body>
+        <!-- /start of navigation-bar -->
+        <nav class ="navbar navbar-inverse navbar-static-top" role="navigation">     
+            <div class ="container-fluid">
+                 <div class="navbar-header"> 
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-Allusion-navbar-collapse-1" aria-expanded="false">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     
+                    </button>
+                    <a class ="navbar-brand" href="#">Allusion tech</a>
+            </div>
+                <div class="collapse navbar-collapse navbar-right" id="bs-Allusion-navbar-collapse-1">
+                    <ul class ="nav navbar-nav nav-tabs">
+                        <li><a href ="index.html">Home</a></li>
+                        <li><a href ="index.html">About</a></li>
+                        <li><a href ="index.html">Contact</a></li>     
+                        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Allusion <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">link1</a></li>
+            <li><a href="#">link2</a></li>
+            <li><a href="#">link3</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- /end of navigation-bar -->
+<div class ="container">
+     <div class="row">
+         <div class="col-md-5"></div>
+         <div class="panel panel-default">
+         <div class="panel-heading">
+             <h4 class="panel-title">Contact address</h4>
+         </div>
+         <div class="panel-body">
+         <strong>Allusion</strong>
+                <address>
+                9999<br>
+                kphb<br>
+                hyderbad
+            </address>
+         </div></div>
+     </div>
+     
+          <div class="col-md-7"></div>
+          <div class="panel panel-default">
+              <div class="panel-heading">
+             <h4 class="panel-title">Contact Form</h4>
+         </div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="POST" id="contactform" action="" role="form">
+  <div class="form-group">
+    <label for="contactname" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-6">   
+    <input type="text" class="form-control" id="contactname" placeholder="Enter name">
+    <span id="helpBlock" class="help-block">USE SMALL LETTERS</span>
+    </div>
+  </div>
+  <div class="form-group ">
+    <label for="contactemail" class="col-sm-2 control-label">Email addres</label>
+    <div class="col-sm-6">
+    <input type="email" class="form-control input-lg" id="contactemail" placeholder="Email">
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="contactsubject" class="col-sm-2 control-label">subject</label>
+    <div class="col-sm-6">
+    <input type="text" class="form-control" id="contactsubject" placeholder="Enter subject">
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="contactmessage" class="col-sm-2 control-label">message</label>
+    <div class="col-sm-6">
+    <textarea class="form-control" id="contactmessage" rows="4"></textarea>
+  </div>
+  </div>
+  
+  <select class="form-control">
+  <option>pandu</option>
+  <option>chaitu</option>
+  <option>cahndu</option>
+  <option>kittu</option>
+ 
+</select>
+  <div class="col-sm-offset-2 col-sm-10">
+  <button type="button" id="contactbtn" class="btn btn-default">Submit</button>
+</form>
+</div>
+</div>
+<!-- /start of the footer -->
+
+<!--<footer class ="site-footer ">
+        <div class ="container">
+            <div class="row">
+            <div class="col-md-2">
+                <h4>contact address</h4>
+                <address>
+                9999<br>
+                kphb<br>
+                hyderbad
+            </address>
+
+            </div>
+            </div>
+            <div class="bottom-footer">
+                <div class="col-md-2">© Copyright Allusion</div>
+                <div class="col-md-2"></div>
+                
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html">Link</a></li>
+                </ul>
+
+            </div>
+        </div>
+</footer>-->
+
+<!-- /end of footer -->
+<script src="js/jquery.js"></script>  
+<script src ="js/bootstrap.min.js"></script>
+<script>
+    function validatetext(id) 
+    {
+        if($("#"+id).val()==null || $("#"+id).val()=="")
+        {
+            var div = $("#"+id).closest("div");
+            div.removeClass(" has-success");
+            $("#glypcn"+id).remove();
+            div.addClass("has-error has-feedback");
+            div.append('<span id="glypcn'+id+'" class="glyphicon glyphicon-remove form-control-feedback"></span>');
+            return false;
+        }
+        else
+        {
+            var div = $("#"+id).closest("div");
+            div.removeClass(" has-error");
+            div.addClass(" has-success has-feedback");
+            div.append('<span id="glypcn'+id+'" class="glyphicon glyphicon-ok form-control-feedback"></span>');
+             $("#glypcn"+id).remove();
+             return true;
+        }
+    }
+    $(document).ready(
+        function()
+        {
+            $("#contactbtn").click(function()
+            {
+                    if(!validatetext("contactname"))
+                    {
+                        return false;
+                    }
+                    if(!validatetext("contactemail"))
+                    {
+                        return false;
+                    }
+                    if(!validatetext("contactsubject"))
+                    {
+                        return false;
+                    }
+                    if(!validatetext("contactmessage"))
+                    {
+                        return false;
+                    }
+                    $("form#contactform").submit(); 
+            });
+
+        }
+    );
+</script>
+</body>
+</html>
+
